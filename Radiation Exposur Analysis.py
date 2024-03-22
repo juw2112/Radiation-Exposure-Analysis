@@ -3,12 +3,16 @@
 
 # Function to calculate average radiation level.
 def calculate_average(data):
+
+    """Calculate the average radiation level."""
     total = sum(data)
     average = total / len(data)
     return average
 
 # Function to calculate standard deviation.
 def calculate_std_dev(data, average):
+    
+    """Calculate the standard deviation."""
     variance = sum((x - average) ** 2 for x in data) / len(data)
     std_dev = variance ** 0.5
     return std_dev
