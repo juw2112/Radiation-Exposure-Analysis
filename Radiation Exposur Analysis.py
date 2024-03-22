@@ -5,13 +5,13 @@
 def calculate_average(data):
     """Calculate the average radiation level."""
     total = sum(data)
-    average = total / len(data)
+    average = total / len(data)        # Formula for average calculation.
     return average
 
 # Function to calculate standard deviation.
 def calculate_std_dev(data, average):
     """Calculate the standard deviation."""
-    variance = sum((x - average) ** 2 for x in data) / len(data)
+    variance = sum((x - average) ** 2 for x in data) / len(data)    # Formula for variance calculation.
     std_dev = variance ** 0.5
     return std_dev
 
@@ -72,4 +72,4 @@ for location_data in locations_data:
     print(f"Average Radiation Level: {avg_radiation:.2f}")
     print(f"Standard Deviation: {std_dev:.2f}")
 
-print("\nData processing completed.")
+print("\nData processing completed.")   # To let the user know that the processing is finish.
