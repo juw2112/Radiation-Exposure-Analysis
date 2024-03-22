@@ -1,6 +1,11 @@
 # This is a program that will handle radiation exposure by taking 
 # numberous measurements and calculates certain statistical results.
 
+# Constants for radiation thresholds.
+low_threshold = 50
+moderate_threshold = 100
+high_threshold = 150
+
 # Function to calculate average radiation level.
 def calculate_average(data):
     total = sum(data)
@@ -69,5 +74,13 @@ for location_data in locations_data:
     print(f"\nLocation: {location}")
     print(f"Average Radiation Level: {avg_radiation:.2f}")
     print(f"Standard Deviation: {std_dev:.2f}")
+
+    # Check radiation levels against thresholds.
+    if avg_radiation < low_threshold:
+        print("Radiation level: Low")
+    elif low_threshold <= avg_radiation < moderate_threshold:
+        print("Radiation level: Moderate")
+    elif avg_radiation >= moderate_threshold:
+        print("Radiation level: High")
 
 print("\nData processing completed.")
