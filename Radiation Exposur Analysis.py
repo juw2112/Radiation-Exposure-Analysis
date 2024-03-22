@@ -3,7 +3,6 @@
 
 # Function to calculate average radiation level.
 def calculate_average(data):
-
     """Calculate the average radiation level."""
     total = sum(data)
     average = total / len(data)
@@ -11,7 +10,6 @@ def calculate_average(data):
 
 # Function to calculate standard deviation.
 def calculate_std_dev(data, average):
-    
     """Calculate the standard deviation."""
     variance = sum((x - average) ** 2 for x in data) / len(data)
     std_dev = variance ** 0.5
@@ -21,7 +19,7 @@ def calculate_std_dev(data, average):
 locations_data = []     # List to store data for each location.
 continue_input = True   # Variable to control the input loop.
 
-# Main loop for data input.
+# Main loop for user to input data till they are done.
 while continue_input:
     location_name = input("Enter location name (or type 'done' to finish): ")
     
@@ -31,7 +29,7 @@ while continue_input:
     
     measurements = []   # List to store radiation measurements for the current location.
 
-    # Loop to input measurements for the current location.
+    # Loop for user to input measurements for the current location till they are done.
     while True:
         try:
             # Input a radiation measurement.
