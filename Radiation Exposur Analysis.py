@@ -8,13 +8,15 @@ high_threshold = 150
 
 # Function to calculate average radiation level.
 def calculate_average(data):
+    """Calculate the average radiation level."""
     total = sum(data)
-    average = total / len(data)
+    average = total / len(data)        # Formula for average calculation.
     return average
 
 # Function to calculate standard deviation.
 def calculate_std_dev(data, average):
-    variance = sum((x - average) ** 2 for x in data) / len(data)
+    """Calculate the standard deviation."""
+    variance = sum((x - average) ** 2 for x in data) / len(data)    # Formula for variance calculation.
     std_dev = variance ** 0.5
     return std_dev
 
@@ -22,7 +24,7 @@ def calculate_std_dev(data, average):
 locations_data = []     # List to store data for each location.
 continue_input = True   # Variable to control the input loop.
 
-# Main loop for data input.
+# Main loop for user to input data till they are done.
 while continue_input:
     location_name = input("Enter location name (or type 'done' to finish): ")
     
@@ -32,7 +34,7 @@ while continue_input:
     
     measurements = []   # List to store radiation measurements for the current location.
 
-    # Loop to input measurements for the current location.
+    # Loop for user to input measurements for the current location till they are done.
     while True:
         try:
             # Input a radiation measurement.
@@ -83,4 +85,4 @@ for location_data in locations_data:
     elif avg_radiation >= moderate_threshold:
         print("Radiation level: High")
 
-print("\nData processing completed.")
+print("\nData processing completed.")  # To let the user know that the processing is finish.
